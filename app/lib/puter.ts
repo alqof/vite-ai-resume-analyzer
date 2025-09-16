@@ -85,10 +85,7 @@ interface PuterStore {
         get: (key: string) => Promise<string | null | undefined>;
         set: (key: string, value: string) => Promise<boolean | undefined>;
         delete: (key: string) => Promise<boolean | undefined>;
-        list: (
-            pattern: string,
-            returnValues?: boolean
-        ) => Promise<string[] | KVItem[] | undefined>;
+        list: (pattern: string, returnValues?: boolean) => Promise<string[] | KVItem[] | undefined>;
         flush: () => Promise<boolean | undefined>;
     };
 
@@ -350,7 +347,8 @@ export const usePuterStore = create<PuterStore>((set, get) => {
                     ],
                 },
             ],
-            { model: "claude-3-7-sonnet" }
+            // { model: "claude-3-7-sonnet" }
+            { model: "gpt-5-nano" }
         ) as Promise<AIResponse | undefined>;
     };
 
