@@ -14,8 +14,8 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  const { auth, kv } = usePuterStore();
   const navigate = useNavigate();
+  const { auth, kv } = usePuterStore();
   const [resumes, setResumes] = useState<TResume[]>([]);
   const [loadingResumes, setLoadingResumes] = useState(false);
 
@@ -28,7 +28,6 @@ export default function Home() {
       setLoadingResumes(true);
 
       const resumes = (await kv.list('resume:*', true)) as KVItem[];
-
       const parsedResumes = resumes?.map((resume) => (
           JSON.parse(resume.value) as TResume
       ))
@@ -49,6 +48,7 @@ export default function Home() {
       <section className="main-section">
         <div className="page-heading py-16">
           <h1>Track Your Applications & Resume Ratings</h1>
+          
           {!loadingResumes && resumes?.length===0 ? (
               <h2>No resumes found. Upload your first resume to get feedback.</h2>
           ): (
