@@ -28,7 +28,7 @@ main {
 }
 
 h1 {
-  @apply text-6xl  text-gradient leading-tight tracking-[-2px] font-semibold;
+  @apply text-6xl text-gradient leading-tight tracking-[-2px] font-semibold;
 }
 h2 {
   @apply text-3xl text-dark-200;
@@ -57,10 +57,10 @@ form {
 
 @layer components {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#5ab24e] via-[#000000] to-[#bec58e];
   }
   .gradient-border {
-    @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 p-4 rounded-2xl;
+    @apply p-4 rounded-2xl bg-gradient-to-b from-green-800/50 to-yellow-600/20;
   }
   .primary-button {
     @apply primary-gradient text-white rounded-full px-4 py-2 cursor-pointer w-full;
@@ -103,7 +103,7 @@ form {
   }
 
   .navbar {
-    @apply px-8 lg:px-10 flex flex-row justify-between items-center bg-white rounded-full p-4 w-full max-w-[1200px] mx-auto;
+    @apply px-8 lg:px-10 flex flex-row justify-between items-center bg-white rounded-full p-4 w-full max-w-[1200px] mx-auto shadow-xl;
   }
 
   .score-badge {
@@ -122,32 +122,29 @@ form {
   }
 }
 
+
 @utility bg-gradient {
   background: linear-gradient(to bottom, #f0f4ff 60%, #fa7185cc);
 }
-
 @utility text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#5ab24e] via-[#000000] to-[#BBC58E];
+  /* @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5]; */
 }
-
 @utility gradient-hover {
-  @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200;
+  @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+  /* @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200; */
 }
-
 @utility primary-gradient {
-  background: linear-gradient(to bottom, #8e98ff, #606beb);
+  background: linear-gradient(to bottom, #5ab24e, #008609);
   box-shadow: 0px 74px 21px 0px #6678ef00;
 }
-
 @utility primary-gradient-hover {
   background: linear-gradient(to bottom, #717dff, #4957eb);
 }
-
 @utility inset-shadow {
-  box-shadow: inset 0 0 12px 0 rgba(36, 99, 235, 0.2);
+  box-shadow: inset 0 0 14px 0 rgb(0 0 0 / 15%);
   backdrop-filter: blur(10px);
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;

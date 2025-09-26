@@ -41,7 +41,7 @@ export default function Home() {
 
 
   return (
-    <main className="bg-[url('/images/bg-main.svg')] bg-cover bg-center">
+    <main className="bg-[url('/images/bg-main-1.svg')] bg-cover bg-center">
       <Navbar />
       {/* {window.puter.ai.chat} */}
 
